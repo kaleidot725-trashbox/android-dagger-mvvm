@@ -1,4 +1,4 @@
-package kaleidot725.myapplication.ui
+package kaleidot725.myapplication
 
 import android.app.Application
 import kaleidot725.myapplication.di.AppComponent
