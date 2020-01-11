@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.*
 import dagger.multibindings.IntoMap
 import kaleidot725.myapplication.model.WordGenerator
-import kaleidot725.myapplication.ui.MainViewModel
+import kaleidot725.myapplication.ui.main.MainViewModel
 import kaleidot725.myapplication.MyApplication
 import kotlin.reflect.KClass
 
@@ -20,6 +20,7 @@ annotation class ViewModelKey(val value: KClass<out ViewModel>)
 interface AppComponent {
     fun wordGenerator(): WordGenerator
     fun viewModelFactory() : ViewModelProvider.Factory
+    fun detailComponent(): DetailComponent.Factory
 }
 
 @Module
@@ -44,3 +45,4 @@ interface BindModule {
 
 fun Activity.requireAppComponent() = (application as MyApplication).appComponent
 fun Fragment.requireAppComponent() = (activity?.application as MyApplication).appComponent
+

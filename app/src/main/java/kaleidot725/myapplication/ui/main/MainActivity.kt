@@ -1,13 +1,14 @@
-package kaleidot725.myapplication.ui
+package kaleidot725.myapplication.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import kaleidot725.myapplication.R
 import kaleidot725.myapplication.di.requireAppComponent
+import kaleidot725.myapplication.ui.Detail.DetailActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,5 +30,8 @@ class MainActivity : AppCompatActivity() {
             add(R.id.container, MainFragment())
             commit()
         }
+
+        val intent = Intent(this, DetailActivity::class.java)
+        startActivity(intent)
     }
 }
